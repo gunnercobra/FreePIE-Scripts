@@ -1,6 +1,7 @@
 # Android Gyroscope script for CEMU
 # Requires FreePIE - http://andersmalmgren.github.io/FreePIE/
 # This scripts gets data from com.freepie.android.imu.apk, located in the freepie installation folder
+# iPhone not yet supported, check http://www.mtbs3d.com/phpBB/viewtopic.php?f=139&t=15484 if you want to adapt it
 # Install it and run on your android device
 # Recomended to run on FullScreen
 # F2 to activate the plugin is the default key, check below
@@ -35,7 +36,10 @@ if toggle:
 	mouse.setButton(1,0)
 	set_cursor((window_width / 2),(window_height / 2))	
 	time.sleep(0.2)
-	enabled = not enabled	
+	enabled = not enabled
+	
+# sensitivity multiplier
+sens = 1
 	
 # Right mouse click if enabled
 if enabled:
@@ -52,6 +56,7 @@ window_width_total = window_width/2
 x_value = window_width_total*x_per
 x_coord = window_width_total - x_value
 x_coord = filters.simple(x_coord, 0.5)
+x_coord = x_coord * sens
 x_coord = int(round(x_coord))
 
 y_per = pitch/1.5								# Converts axis to -1 to 1 scale
@@ -60,6 +65,7 @@ window_height_total = window_height/2
 y_value = window_height_total*y_per	
 y_coord = window_height_total - y_value
 y_coord = filters.simple(y_coord,  0.5)
+y_coord = y_coord * sens
 y_coord = int(round(y_coord))
 
 # Limits Roll to -1.5 to 1.5 scale
