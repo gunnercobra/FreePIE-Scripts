@@ -37,10 +37,7 @@ if toggle:
 	set_cursor((window_width / 2),(window_height / 2))	
 	time.sleep(0.2)
 	enabled = not enabled
-	
-# sensitivity multiplier
-sens = 1
-	
+
 # Right mouse click if enabled
 if enabled:
 	mouse.setButton(1,1)
@@ -49,6 +46,12 @@ if enabled:
 roll = android[0].googlePitch
 pitch = android[0].googleRoll
 #yaw = android[0].googleYaw
+
+# sensitivity multiplier, < 1 lowers sensitivity, >1 hightens sensitivity
+sens = 1
+roll = roll * sens
+pitch = pitch * sens
+#yaw = yaw * sens
 
 x_per = roll/1.5								# Converts axis to -1 to 1 scale
 #x_per = - x_per 								# Invert axis, comment to disable
