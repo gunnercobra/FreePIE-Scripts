@@ -1,4 +1,5 @@
 # Android Gyroscope script for CEMU
+# Requires FreePIE - http://andersmalmgren.github.io/FreePIE/
 # This scripts gets data from com.freepie.android.imu.apk, located in the freepie installation folder
 # Install it and run on your android device
 # Recomended to run on FullScreen
