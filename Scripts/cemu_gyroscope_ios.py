@@ -44,7 +44,7 @@ if enabled:
 # IOS gyro/accel inputs, roll and pitch are inverted to use it as landscape, yaw yet not implemented
 roll = math.degrees(iPhone.roll)
 pitch = math.degrees(iPhone.pitch)
-yaw = math.degrees(iPhone.yaw)
+#yaw = math.degrees(iPhone.yaw)
 
 # sensitivity multiplier, < 1 lowers sensitivity, >1 hightens sensitivity
 sens = 0.02
