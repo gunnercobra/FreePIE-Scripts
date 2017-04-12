@@ -3,6 +3,7 @@
 # This scripts gets data from com.freepie.android.imu.apk, located in the freepie installation folder
 # Install it and run on your android device
 # Recomended to run on FullScreen
+# F2 to activate the plugin is the default key, check below
 
 import ctypes
 from ctypes import windll, Structure, c_ulong, byref, wintypes
